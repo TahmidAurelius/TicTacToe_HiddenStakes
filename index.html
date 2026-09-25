@@ -481,9 +481,10 @@
                         const player = this.winner.charAt(0);
                         const winnerPoints = player === 'X' ? this.xPoints : this.oPoints;
                         const loserPoints = player === 'X' ? this.oPoints : this.xPoints;
+                        const diff = Math.abs(winnerPoints - loserPoints);
                         gameStatusEl.textContent = `${player} Wins by Points!`;
                         statusMsgEl.className = 'status show draw';
-                        statusMsgEl.textContent = `🏆 ${player} wins ${winnerPoints} vs ${loserPoints} points!`;
+                        statusMsgEl.textContent = `🏆 ${player} wins by ${diff} point${diff !== 1 ? 's' : ''}!`;
                     } else {
                         gameStatusEl.textContent = `${this.winner} Wins!`;
                         statusMsgEl.className = 'status show game-over';
