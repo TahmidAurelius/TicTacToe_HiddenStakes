@@ -26,9 +26,10 @@
             border-radius: 24px;
             border: 2px solid #00ff88;
             box-shadow: 0 0 30px rgba(0, 255, 136, 0.3), inset 0 0 20px rgba(0, 255, 200, 0.1);
-            padding: 50px;
-            max-width: 500px;
+            padding: clamp(20px, 8vw, 50px);
+            max-width: 90vw;
             width: 100%;
+            max-width: 600px;
             animation: slideIn 0.4s ease-out;
         }
 
@@ -47,7 +48,7 @@
             text-align: center;
             color: #00ff88;
             margin-bottom: 8px;
-            font-size: 36px;
+            font-size: clamp(24px, 6vw, 40px);
             font-weight: 700;
             letter-spacing: -0.5px;
             text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
@@ -57,7 +58,7 @@
             text-align: center;
             color: #00ccff;
             margin-bottom: 40px;
-            font-size: 14px;
+            font-size: clamp(12px, 2.5vw, 16px);
             font-weight: 500;
             opacity: 0.8;
         }
@@ -65,13 +66,13 @@
         .game-info {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-bottom: 35px;
+            gap: clamp(12px, 3vw, 20px);
+            margin-bottom: clamp(25px, 5vw, 40px);
             text-align: center;
         }
 
         .info-box {
-            padding: 18px;
+            padding: clamp(12px, 3vw, 18px);
             border-radius: 12px;
             background: linear-gradient(135deg, #0a0f2e 0%, #1a1a4e 100%);
             border: 1px solid #00ffff;
@@ -79,17 +80,17 @@
         }
 
         .info-label {
-            font-size: 11px;
+            font-size: clamp(10px, 2vw, 12px);
             color: #00ffff;
             text-transform: uppercase;
             letter-spacing: 1.2px;
-            margin-bottom: 6px;
+            margin-bottom: clamp(4px, 1.5vw, 8px);
             font-weight: 600;
             opacity: 0.7;
         }
 
         .current-player {
-            font-size: 28px;
+            font-size: clamp(20px, 5vw, 32px);
             font-weight: 700;
             color: #00ff88;
             text-shadow: 0 0 15px rgba(0, 255, 136, 0.6);
@@ -108,10 +109,10 @@
         .board {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            margin-bottom: 35px;
+            gap: clamp(8px, 2vw, 16px);
+            margin-bottom: clamp(25px, 5vw, 40px);
             background: linear-gradient(135deg, #05051f 0%, #0a0a2e 100%);
-            padding: 16px;
+            padding: clamp(12px, 3vw, 20px);
             border-radius: 16px;
             border: 1px solid #00ffff;
             box-shadow: inset 0 0 15px rgba(0, 255, 255, 0.1);
@@ -121,7 +122,7 @@
             aspect-ratio: 1;
             background: linear-gradient(135deg, #0a0a20 0%, #151535 100%);
             border: 2px solid #00ccff;
-            border-radius: 12px;
+            border-radius: clamp(8px, 2vw, 14px);
             cursor: pointer;
             display: flex;
             flex-direction: column;
@@ -129,7 +130,7 @@
             align-items: center;
             transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
-            min-height: 90px;
+            min-height: clamp(60px, 18vw, 100px);
             font-weight: bold;
             box-shadow: 0 0 10px rgba(0, 204, 255, 0.2);
         }
@@ -148,9 +149,9 @@
         }
 
         .cell-piece {
-            font-size: 52px;
+            font-size: clamp(36px, 10vw, 60px);
             line-height: 1;
-            margin-bottom: 4px;
+            margin-bottom: clamp(2px, 1vw, 6px);
             filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.5));
         }
 
@@ -165,7 +166,7 @@
         }
 
         .cell-value {
-            font-size: 13px;
+            font-size: clamp(10px, 2.5vw, 14px);
             color: #00ff88;
             font-weight: 600;
             letter-spacing: 0.5px;
@@ -174,13 +175,13 @@
 
         .status {
             text-align: center;
-            padding: 18px;
-            margin-bottom: 25px;
+            padding: clamp(12px, 3vw, 20px);
+            margin-bottom: clamp(18px, 4vw, 28px);
             border-radius: 12px;
             font-weight: 600;
             display: none;
             min-height: 30px;
-            font-size: 16px;
+            font-size: clamp(14px, 3vw, 18px);
             animation: slideIn 0.3s ease-out;
         }
 
@@ -204,14 +205,15 @@
 
         .controls {
             display: flex;
-            gap: 12px;
+            gap: clamp(10px, 2vw, 16px);
             justify-content: center;
-            margin-bottom: 20px;
+            margin-bottom: clamp(15px, 3vw, 25px);
+            flex-wrap: wrap;
         }
 
         button {
-            padding: 14px 36px;
-            font-size: 15px;
+            padding: clamp(10px, 2.5vw, 16px) clamp(20px, 5vw, 40px);
+            font-size: clamp(13px, 2.5vw, 16px);
             border: none;
             border-radius: 10px;
             cursor: pointer;
@@ -219,6 +221,7 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             letter-spacing: 0.3px;
             text-transform: uppercase;
+            min-height: 44px;
         }
 
         .btn-primary {
@@ -240,8 +243,8 @@
         .stats {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            padding: 24px;
+            gap: clamp(16px, 3vw, 24px);
+            padding: clamp(16px, 4vw, 28px);
             background: linear-gradient(135deg, #0a0a2e 0%, #1a1a4e 100%);
             border-radius: 14px;
             border: 1px solid #00ccff;
@@ -253,17 +256,17 @@
         }
 
         .stat-label {
-            font-size: 11px;
+            font-size: clamp(10px, 2vw, 12px);
             color: #00ffff;
             text-transform: uppercase;
-            margin-bottom: 10px;
+            margin-bottom: clamp(6px, 1.5vw, 10px);
             font-weight: 600;
             letter-spacing: 1.2px;
             opacity: 0.7;
         }
 
         .stat-value {
-            font-size: 32px;
+            font-size: clamp(24px, 5.5vw, 36px);
             font-weight: 700;
             text-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
         }
@@ -278,31 +281,93 @@
             text-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
         }
 
-        @media (max-width: 500px) {
+        /* Extra small devices: 320px - 374px */
+        @media (max-width: 374px) {
+            body {
+                padding: 12px;
+            }
+
             .container {
-                padding: 30px 25px;
-                border-radius: 20px;
+                border-radius: 16px;
             }
 
-            h1 {
-                font-size: 28px;
+            .cell:hover:not(.disabled) {
+                transform: translateY(-2px);
             }
 
+            button:hover {
+                transform: translateY(-1px);
+            }
+        }
+
+        /* Small devices: 375px - 599px */
+        @media (max-width: 599px) {
+            body {
+                padding: 12px;
+            }
+
+            .cell:hover:not(.disabled) {
+                transform: translateY(-3px);
+            }
+
+            button:hover {
+                transform: translateY(-1px);
+            }
+        }
+
+        /* Tablets: 600px - 899px */
+        @media (min-width: 600px) and (max-width: 899px) {
+            .container {
+                max-width: 95vw;
+            }
+        }
+
+        /* Large tablets and small desktops: 900px+ */
+        @media (min-width: 900px) {
+            body {
+                padding: 40px;
+            }
+
+            .container {
+                max-width: 600px;
+            }
+        }
+
+        /* Touch device optimizations */
+        @media (hover: none) and (pointer: coarse) {
             .cell {
-                min-height: 75px;
+                min-height: clamp(70px, 20vw, 110px);
             }
 
-            .cell-piece {
-                font-size: 40px;
+            button {
+                min-height: 50px;
             }
 
-            .stats {
-                gap: 16px;
-                padding: 18px;
+            .cell:active:not(.disabled) {
+                transform: scale(0.98);
             }
 
-            .stat-value {
-                font-size: 26px;
+            button:active {
+                transform: scale(0.95);
+            }
+        }
+
+        /* Landscape orientation */
+        @media (orientation: landscape) and (max-height: 600px) {
+            .container {
+                padding: clamp(15px, 4vw, 35px);
+            }
+
+            .game-info {
+                margin-bottom: clamp(15px, 3vw, 25px);
+            }
+
+            .board {
+                margin-bottom: clamp(15px, 3vw, 25px);
+            }
+
+            .subtitle {
+                margin-bottom: clamp(15px, 3vw, 25px);
             }
         }
     </style>
